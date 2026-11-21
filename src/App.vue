@@ -6,6 +6,9 @@ import { products } from './data/products.js'
 
 const CART_STORAGE_KEY = 'kava-kolo-cart'
 const storageError = ref('')
+const searchQuery = ref('')
+const selectedCategory = ref('Усі')
+const sortOrder = ref('featured')
 const orderSent = ref(false)
 const orderError = ref('')
 
@@ -32,6 +35,25 @@ function loadCart() {
 
 const cart = ref(loadCart())
 const customer = ref({ name: '', phone: '', email: '' })
+const categories = computed(() => ['Усі', ...new Set(products.map((product) => product.category))])
+
+const visibleProducts = computed(() => {
+  const query = searchQuery.value.trim().toLocaleLowerCase('uk')
+  const matchingProducts = products.filter((product) => {
+    const matchesCategory =
+      selectedCategory.value === 'Усі' || product.category === selectedCategory.value
+    const matchesName = product.name.toLocaleLowerCase('uk').includes(query)
+    return matchesCategory && matchesName
+  })
+
+  if (sortOrder.value === 'price-asc') {
+    return [...matchingProducts].sort((a, b) => a.price - b.price)
+  }
+  if (sortOrder.value === 'price-desc') {
+    return [...matchingProducts].sort((a, b) => b.price - a.price)
+  }
+  return matchingProducts
+})
 
 const cartItems = computed(() =>
   cart.value
@@ -148,13 +170,59 @@ watch(
 
         <div class="shop-layout">
           <div class="catalog">
-            <div class="product-grid">
+            <div class="catalog-tools">
+              <label class="search-field">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input
+                  v-model="searchQuery"
+                  type="search"
+                  aria-label="Пошук за назвою"
+                  placeholder="Знайти у меню..."
+                />
+              </label>
+              <label class="sort-field">
+                <select v-model="sortOrder" aria-label="Сортувати товари">
+                  <option value="featured">Спочатку популярне</option>
+                  <option value="price-asc">Від дешевших</option>
+                  <option value="price-desc">Від дорожчих</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="category-list" aria-label="Фільтр за категорією">
+              <button
+                v-for="category in categories"
+                :key="category"
+                class="category-chip"
+                :class="{ 'is-active': selectedCategory === category }"
+                type="button"
+                :aria-pressed="selectedCategory === category"
+                @click="selectedCategory = category"
+              >
+                {{ category }}
+              </button>
+            </div>
+
+            <p class="result-count">Знайшли для тебе: <strong>{{ visibleProducts.length }} позицій</strong></p>
+            <div v-if="visibleProducts.length" class="product-grid">
               <ProductCard
-                v-for="product in products"
+                v-for="product in visibleProducts"
                 :key="product.id"
                 :product="product"
                 @add="addToCart"
               />
+            </div>
+            <div v-else class="empty-state search-empty">
+              <span class="empty-icon" aria-hidden="true">⌕</span>
+              <h3>Нічого не знайшлося</h3>
+              <p>Спробуй іншу назву або обери іншу категорію.</p>
+              <button
+                class="text-button"
+                type="button"
+                @click="searchQuery = ''; selectedCategory = 'Усі'"
+              >
+                Скинути фільтри
+              </button>
             </div>
           </div>
 

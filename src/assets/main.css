@@ -349,11 +349,103 @@ p {
   align-items: start;
 }
 
+.catalog-tools {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 19px;
+}
+
+.search-field,
+.sort-field {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: #fffefa;
+}
+
+.search-field {
+  flex: 1;
+  gap: 9px;
+  padding: 0 12px;
+}
+
+.search-icon {
+  color: #8e867c;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.search-field input,
+.sort-field select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+}
+
+.search-field input::placeholder {
+  color: #a39d94;
+}
+
+.sort-field {
+  width: 175px;
+  padding: 0 10px;
+}
+
+.sort-field select {
+  height: 100%;
+  cursor: pointer;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.category-chip {
+  min-height: 31px;
+  padding: 0 13px;
+  border: 1px solid #e8e1d7;
+  border-radius: 99px;
+  background: transparent;
+  color: #716b62;
+  cursor: pointer;
+  font-size: 10px;
+  transition: all 150ms ease;
+}
+
+.category-chip:hover {
+  border-color: #9c7d61;
+  color: var(--coffee);
+}
+
+.category-chip.is-active {
+  border-color: #38291f;
+  background: #38291f;
+  color: #fffaf1;
+}
+
+.result-count {
+  margin-bottom: 13px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.result-count strong {
+  color: #50483e;
+  font-weight: 600;
+}
+
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 19px 16px;
-  margin-top: 21px;
 }
 
 .product-card {
@@ -633,6 +725,39 @@ p {
   line-height: 1.6;
 }
 
+.search-empty {
+  padding: 55px 15px;
+  border: 1px dashed #ded4c8;
+  background: #fffefa;
+}
+
+.search-empty .empty-icon {
+  font-size: 38px;
+}
+
+.search-empty h3 {
+  font-size: 21px;
+}
+
+.search-empty p {
+  font-size: 12px;
+}
+
+.text-button {
+  margin-top: 13px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #72573e;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.text-button:hover {
+  color: #a76d43;
+}
+
 .checkout-form {
   display: grid;
   gap: 10px;
@@ -801,6 +926,18 @@ p {
   .shop-layout {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .catalog-tools {
+    flex-wrap: wrap;
+  }
+
+  .search-field {
+    flex-basis: 100%;
+  }
+
+  .sort-field {
+    width: 100%;
   }
 
   .cart-panel {
