@@ -6,8 +6,8 @@
     aria-hidden="true"
     role="img"
     class="iconify iconify--mdi"
-    width="24"
-    height="24"
+    width="1.5em"
+    height="1.5em"
     preserveAspectRatio="xMidYMid meet"
     viewBox="0 0 24 24"
   >

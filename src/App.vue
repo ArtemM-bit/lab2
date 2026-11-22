@@ -81,6 +81,7 @@ function addToCart(productId) {
     cart.value.push({ productId, quantity: 1 })
   }
   orderSent.value = false
+  orderError.value = ''
 }
 
 function changeQuantity(productId, amount) {
@@ -238,7 +239,7 @@ watch(
 
             <div v-if="storageError" class="notice notice-error" role="status">{{ storageError }}</div>
             <div v-if="orderSent" class="notice notice-success" role="status">
-              Дякуємо! Замовлення прийнято — скоро зв’яжемося з тобою.
+              Дякуємо! Навчальне замовлення оформлено.
             </div>
             <div v-if="orderError" class="notice notice-error" role="alert">{{ orderError }}</div>
 
@@ -285,8 +286,8 @@ watch(
                   name="phone"
                   autocomplete="tel"
                   placeholder="+380 00 000 00 00"
-                  pattern="[\+0-9\s()-]{10,}"
-                  title="Введи номер телефону щонайменше з 10 цифрами"
+                  pattern="\+?[\s\(\)\-]*(?:[0-9][\s\(\)\-]*){10,15}"
+                  title="Введи номер телефону від 10 до 15 цифр"
                   required
                 />
               </label>
@@ -304,7 +305,7 @@ watch(
               <button class="button button-dark checkout-button" type="submit" :disabled="!cartCount">
                 Замовити <span aria-hidden="true">↗</span>
               </button>
-              <p class="checkout-hint">Натискаючи кнопку, ти погоджуєшся з умовами замовлення.</p>
+              <p class="checkout-hint">Навчальна форма: замовлення не надсилається на сервер.</p>
             </form>
           </aside>
         </div>

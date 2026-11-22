@@ -1,4 +1,6 @@
 <script setup>
+import fallbackImage from '../assets/image-placeholder.svg'
+
 defineProps({
   item: {
     type: Object,
@@ -7,11 +9,16 @@ defineProps({
 })
 
 const emit = defineEmits(['increase', 'decrease', 'remove'])
+
+function useFallbackImage(event) {
+  event.target.onerror = null
+  event.target.src = fallbackImage
+}
 </script>
 
 <template>
   <article class="cart-item">
-    <img :src="item.image" :alt="item.name" />
+    <img :src="item.image" :alt="item.name" @error="useFallbackImage" />
     <div class="cart-item-details">
       <div class="cart-item-title">
         <h3>{{ item.name }}</h3>
