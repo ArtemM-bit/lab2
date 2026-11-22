@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
+import brandLogo from './assets/amazon-coffee.svg'
 import heroCoffeeImage from './assets/hero-coffee.jpg'
 import CartItem from './components/CartItem.vue'
 import ProductCard from './components/ProductCard.vue'
@@ -126,9 +127,9 @@ watch(
 <template>
   <div class="page-shell">
     <header class="site-header">
-      <a class="brand" href="#" aria-label="Коло — на головну">
-        <span class="brand-mark" aria-hidden="true">к</span>
-        <span class="brand-name">коло<span>.</span></span>
+      <a class="brand" href="#" aria-label="Amazon Coffee — на головну">
+        <img class="brand-mark" :src="brandLogo" alt="" aria-hidden="true" />
+        <span class="brand-name">Amazon <span class="brand-subtitle">Coffee</span></span>
       </a>
       <nav class="main-nav" aria-label="Головна навігація">
         <a href="#catalog">Меню</a>
@@ -313,12 +314,12 @@ watch(
     </main>
 
     <footer class="site-footer">
-      <a class="brand footer-brand" href="#" aria-label="Коло — на головну">
-        <span class="brand-mark" aria-hidden="true">к</span>
-        <span class="brand-name">коло<span>.</span></span>
+      <a class="brand footer-brand" href="#" aria-label="Amazon Coffee — на головну">
+        <img class="brand-mark" :src="brandLogo" alt="" aria-hidden="true" />
+        <span class="brand-name">Amazon <span class="brand-subtitle">Coffee</span></span>
       </a>
       <p>Місце, де кава стає приводом бути ближче.</p>
-      <span>© 2025 Коло. З теплом, для тебе.</span>
+      <span>© 2026 Amazon Coffee. З теплом, для тебе.</span>
     </footer>
   </div>
 </template>

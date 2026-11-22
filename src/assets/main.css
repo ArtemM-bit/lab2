@@ -103,39 +103,44 @@ img {
 
 .brand {
   display: inline-flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 0.5625rem;
+  gap: 0.625rem;
 }
 
 .brand-mark {
-  display: grid;
-  width: 2.125rem;
-  height: 2.125rem;
-  place-items: center;
-  border-radius: 50%;
-  background: #38291f;
-  color: #fffaf1;
-  font-family: var(--serif);
-  font-size: 1.375rem;
-  font-style: italic;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
 }
 
 .brand-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1875rem;
+  color: #293f34;
   font-family: var(--serif);
-  font-size: 1.6875rem;
+  font-size: 1.625rem;
   font-weight: 700;
-  letter-spacing: -0.09375rem;
+  letter-spacing: -0.05rem;
+  line-height: 1;
 }
 
-.brand-name > span {
-  color: #a76d43;
+.brand-subtitle {
+  color: #94693f;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
 .main-nav {
   display: flex;
   align-items: center;
   gap: 2.375rem;
-  margin-left: 3.75rem;
+  margin-left: 0;
   color: #716b62;
   font-size: 0.8125rem;
 }
@@ -872,13 +877,12 @@ p {
 }
 
 .footer-brand .brand-mark {
-  width: 1.8125rem;
-  height: 1.8125rem;
-  font-size: 1.1875rem;
+  width: 2.375rem;
+  height: 2.375rem;
 }
 
 .footer-brand .brand-name {
-  font-size: 1.4375rem;
+  font-size: 1.375rem;
 }
 
 .site-footer p,
@@ -1012,13 +1016,16 @@ p {
   }
 
   .brand-mark {
-    width: 1.875rem;
-    height: 1.875rem;
-    font-size: 1.1875rem;
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   .brand-name {
-    font-size: 1.5rem;
+    font-size: 1.1875rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.5625rem;
   }
 
   .main-nav {
