@@ -892,6 +892,149 @@ p {
   font-size: 0.625rem;
 }
 
+@media (min-width: 65.625em) {
+  body,
+  .main-nav,
+  .header-cart,
+  .button,
+  .category-chip,
+  .product-copy p,
+  .cart-item-title h3,
+  .cart-item-price,
+  .quantity-control span,
+  .cart-total,
+  .empty-state p,
+  .search-empty p,
+  .text-button,
+  .checkout-form label > span,
+  .notice {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    max-width: 30rem;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  .eyebrow,
+  .cart-heading .eyebrow,
+  .product-category {
+    font-size: 0.8125rem;
+  }
+
+  .hero-note,
+  .note-stars,
+  .section-intro,
+  .result-count,
+  .cart-badge,
+  .cart-heading h2 span,
+  .checkout-hint,
+  .site-footer p,
+  .site-footer > span {
+    font-size: 0.875rem;
+  }
+
+  .brand-name {
+    font-size: 1.875rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .hero-sticker {
+    font-size: 1rem;
+  }
+
+  .hero-sticker strong {
+    font-size: 1.25rem;
+  }
+
+  .hero-caption {
+    font-size: 1.75rem;
+  }
+
+  .section-heading {
+    gap: 1.5rem;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.5rem, 3.2vw, 3rem);
+  }
+
+  .shop-layout {
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: 2rem;
+  }
+
+  .catalog-tools {
+    flex-wrap: wrap;
+  }
+
+  .search-field,
+  .sort-field,
+  .checkout-form input,
+  .button {
+    min-height: 3.125rem;
+  }
+
+  .search-field {
+    flex-basis: 12rem;
+  }
+
+  .sort-field {
+    width: 14rem;
+  }
+
+  .product-info {
+    padding: 1rem;
+  }
+
+  .product-copy h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+
+  .product-copy p {
+    margin-block: 0.5rem 1rem;
+  }
+
+  .product-purchase > strong,
+  .empty-state h3,
+  .quantity-control button {
+    font-size: 1.25rem;
+  }
+
+  .cart-heading h2 {
+    font-size: 2rem;
+  }
+
+  .cart-total strong,
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .cart-item-title h3 {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .checkout-form {
+    gap: 0.875rem;
+  }
+
+  .footer-brand .brand-name {
+    font-size: 1.625rem;
+  }
+}
+
+@media (min-width: 65.625em) and (max-width: 79.999em) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 65.625em) {
   .page-shell {
     width: min(calc(100% - 3.5rem), 56.25rem);
