@@ -1,5 +1,21 @@
-const coffeeImage = (id) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=900&q=80`
+import rafImage from '../assets/raf.jpg'
+import espressoImage from '../assets/espresso.jpg'
+import cinnamonRollImage from '../assets/cinnamon-roll.jpg'
+import cheesecakeImage from '../assets/cheesecake.jpg'
+import matchaImage from '../assets/matcha.jpg'
+import chaiImage from '../assets/chai.jpg'
+import beansImage from '../assets/beans.jpg'
+import cappuccinoImage from '../assets/cappuccino.jpg'
+import americanoImage from '../assets/americano.jpg'
+import croissantImage from '../assets/croissant.jpg'
+import brownieImage from '../assets/brownie.jpg'
+import lemonTartImage from '../assets/lemon-tart.jpg'
+import ethiopiaBeansImage from '../assets/ethiopia-beans.jpg'
+import caramelLatteImage from '../assets/caramel-latte.jpg'
+import chamomileImage from '../assets/chamomile.jpg'
+import earlGreyImage from '../assets/earl-grey.jpg'
+import flatWhiteImage from '../assets/flat-white.jpg'
+import icedLatteImage from '../assets/iced-latte.jpg'
 
 export const products = [
   {
@@ -8,7 +24,7 @@ export const products = [
     description: 'Подвійний еспресо, ніжне молоко',
     price: 95,
     category: 'Кава',
-    image: coffeeImage('photo-1461023058943-07fcbe16d735'),
+    image: flatWhiteImage,
   },
   {
     id: 'raf',
@@ -16,7 +32,7 @@ export const products = [
     description: 'Вершки, ваніль і трішки лаванди',
     price: 115,
     category: 'Кава',
-    image: coffeeImage('photo-1517701604599-bb29b565090c'),
+    image: rafImage,
   },
   {
     id: 'espresso',
@@ -24,7 +40,7 @@ export const products = [
     description: 'Яскравий еспресо з цитрусовим тоніком',
     price: 105,
     category: 'Кава',
-    image: coffeeImage('photo-1517701550927-30cf4ba1dba5'),
+    image: espressoImage,
   },
   {
     id: 'cinnamon-roll',
@@ -32,7 +48,7 @@ export const products = [
     description: 'Булочка з корицею та вершковою глазур’ю',
     price: 89,
     category: 'Десерти',
-    image: coffeeImage('photo-1509440159596-0249088772ff'),
+    image: cinnamonRollImage,
   },
   {
     id: 'cheesecake',
@@ -40,7 +56,7 @@ export const products = [
     description: 'Ніжний сирний крем і ягідний соус',
     price: 125,
     category: 'Десерти',
-    image: coffeeImage('photo-1533134242443-d4fd215305ad'),
+    image: cheesecakeImage,
   },
   {
     id: 'matcha',
@@ -48,7 +64,7 @@ export const products = [
     description: 'Японська матча на вівсяному молоці',
     price: 120,
     category: 'Чай',
-    image: coffeeImage('photo-1515823064-d6e0c04616a7'),
+    image: matchaImage,
   },
   {
     id: 'chai',
@@ -56,7 +72,7 @@ export const products = [
     description: 'Чорний чай, спеції та тепле молоко',
     price: 100,
     category: 'Чай',
-    image: coffeeImage('photo-1571934811356-5cc061b6821f'),
+    image: chaiImage,
   },
   {
     id: 'beans',
@@ -64,7 +80,7 @@ export const products = [
     description: 'Мита обробка, ноти карамелі й яблука · 250 г',
     price: 390,
     category: 'Зерно',
-    image: coffeeImage('photo-1559525839-b184a4d698c7'),
+    image: beansImage,
   },
   {
     id: 'cappuccino',
@@ -72,7 +88,7 @@ export const products = [
     description: 'Класичний еспресо з ніжною молочною пінкою',
     price: 100,
     category: 'Кава',
-    image: coffeeImage('photo-1534778101976-62847782c213'),
+    image: cappuccinoImage,
   },
   {
     id: 'caramel-latte',
@@ -80,7 +96,7 @@ export const products = [
     description: 'Еспресо, молоко та домашня карамель',
     price: 125,
     category: 'Кава',
-    image: coffeeImage('photo-1461023058943-07fcbe16d735'),
+    image: caramelLatteImage,
   },
   {
     id: 'americano',
@@ -88,7 +104,7 @@ export const products = [
     description: 'Подвійний еспресо з чистою гарячою водою',
     price: 75,
     category: 'Кава',
-    image: coffeeImage('photo-1495474472287-4d71bcdd2085'),
+    image: americanoImage,
   },
   {
     id: 'iced-latte',
@@ -96,7 +112,7 @@ export const products = [
     description: 'Подвійний еспресо, молоко та лід',
     price: 120,
     category: 'Кава',
-    image: coffeeImage('photo-1461023058943-07fcbe16d735'),
+    image: icedLatteImage,
   },
   {
     id: 'croissant',
@@ -104,7 +120,7 @@ export const products = [
     description: 'Листкове тісто з мигдалевим кремом',
     price: 95,
     category: 'Десерти',
-    image: coffeeImage('photo-1555507036-ab1f4038808a'),
+    image: croissantImage,
   },
   {
     id: 'brownie',
@@ -112,7 +128,7 @@ export const products = [
     description: 'Насичений шоколадний десерт із волоським горіхом',
     price: 90,
     category: 'Десерти',
-    image: coffeeImage('photo-1606313564200-e75d5e30476c'),
+    image: brownieImage,
   },
   {
     id: 'lemon-tart',
@@ -120,7 +136,7 @@ export const products = [
     description: 'Пісочна основа, лимонний курд і меренга',
     price: 115,
     category: 'Десерти',
-    image: coffeeImage('photo-1768236360495-8c32c6645590'),
+    image: lemonTartImage,
   },
   {
     id: 'earl-grey',
@@ -128,7 +144,7 @@ export const products = [
     description: 'Чорний чай із бергамотом',
     price: 85,
     category: 'Чай',
-    image: coffeeImage('photo-1594631252845-29fc4cc8cde9'),
+    image: earlGreyImage,
   },
   {
     id: 'chamomile',
@@ -136,7 +152,7 @@ export const products = [
     description: 'Заспокійливий трав’яний настій',
     price: 80,
     category: 'Чай',
-    image: coffeeImage('photo-1544787219-7f47ccb76574'),
+    image: chamomileImage,
   },
   {
     id: 'ethiopia-beans',
@@ -144,6 +160,6 @@ export const products = [
     description: 'Натуральна обробка, ноти ягід і жасмину · 250 г',
     price: 420,
     category: 'Зерно',
-    image: coffeeImage('photo-1559525839-b184a4d698c7'),
+    image: ethiopiaBeansImage,
   },
 ]

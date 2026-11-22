@@ -1,4 +1,6 @@
 <script setup>
+import fallbackImage from '../assets/image-placeholder.svg'
+
 defineProps({
   product: {
     type: Object,
@@ -7,10 +9,9 @@ defineProps({
 })
 
 const emit = defineEmits(['add'])
-const fallbackImage =
-  'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 640 480%22%3E%3Crect width=%22640%22 height=%22480%22 fill=%22%23e9dfd0%22/%3E%3Ctext x=%2250%25%22 y=%2253%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2290%22 fill=%22%23845f43%22%3E%E2%98%95%3C/text%3E%3C/svg%3E'
 
 function useFallbackImage(event) {
+  event.target.onerror = null
   event.target.src = fallbackImage
 }
 </script>

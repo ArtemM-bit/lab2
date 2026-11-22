@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
+import heroCoffeeImage from './assets/hero-coffee.jpg'
 import CartItem from './components/CartItem.vue'
 import ProductCard from './components/ProductCard.vue'
 import { products } from './data/products.js'
@@ -151,7 +152,7 @@ watch(
         </div>
         <div class="hero-visual">
           <img
-            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1200&q=85"
+            :src="heroCoffeeImage"
             alt="Свіжозварена кава у затишній кав'ярні"
           />
           <div class="hero-sticker"><span>свіже</span><strong>щодня</strong></div>
